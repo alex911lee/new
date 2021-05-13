@@ -1,7 +1,12 @@
+"""
+This module is used to parse file name.
+"""
 import re
 
 
 def exclude_word(word_list):
+    """To exclude words that we don't want to count."""
+
     prepositions = [
         'aboard', 'about', 'above', 'across', 'after', 'against', 'along',
         'amid', 'among', 'around', 'before', 'behind', 'below', 'beneath',
@@ -28,6 +33,8 @@ def exclude_word(word_list):
 
 
 def parse_name(file_name):
+    """To parse file name into words."""
+
     string = file_name.lower()
     pattern = '[a-zA-Z]{3,20}'
     result = re.findall(pattern, string)
