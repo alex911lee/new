@@ -2,7 +2,13 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "new-1",
+			"path": "..\\new-1"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.pythonPath": "C:\\Users\\007311\\scoop\\apps\\python\\current\\python.exe"
+	}
 }
