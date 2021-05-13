@@ -3,7 +3,8 @@ import json
 from exterms import parse_name
 
 
-def merge_idx(idx1, idx2):
+def merge_dict(idx1, idx2):
+    """to merge 2 dictionarys"""
     for k, v in idx2.items():
         if k in idx1.keys():
             idx1[k] += v
@@ -19,7 +20,7 @@ def dir_walk(current_dir):
     with os.scandir(current_dir) as it:
         for entry in it:
             if (not entry.name.startswith('.') and entry.is_dir()):
-                index = merge_idx(index, dir_walk(entry))
+                index = merge_dict(index, dir_walk(entry))  # merge subdir's dict to dict
             elif entry.is_file() and entry.name.endswith('pdf'):
                 words = parse_name(entry.name)
                 while words:
