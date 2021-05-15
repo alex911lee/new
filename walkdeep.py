@@ -26,10 +26,10 @@ def dir_walk(current_dir):
                 while words:
                     word = words.pop()
                     if index.get(word):
-                        index[word] = index[word] + 1
+                        index[word] += 1
                     else:
                         index[word] = 1
-                    index['count'] = index['count'] + 1
+                    index['count'] += 1
 
     index_file = os.path.join(os.path.abspath(current_dir), '.index')
     json.dump(index, open(index_file, 'w'))
