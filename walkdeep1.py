@@ -15,13 +15,12 @@ def merge_dict(idx1, idx2):
 
 def dir_walk(current_dir):
     print("parsing...... ", current_dir, os.path.abspath(current_dir))
-
     index = {'count': 0}
 
     with os.scandir(current_dir) as it:
         for entry in it:
             if (not entry.name.startswith('.') and entry.is_dir()):
-                index = merge_dict(index, dir_walk(entry))  # merge subdir's to
+                index = merge_dict(index, dir_walk(entry))  # merge subdir's
             elif entry.is_file() and entry.name.endswith('pdf'):
                 words = parse_name(entry.name)
                 while words:

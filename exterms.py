@@ -16,7 +16,7 @@ def exclude_word(word_list):
         'opposite', 'out', 'outside', 'over', 'past', 'per', 'plus',
         'regarding', 'round', 'save', 'since', 'than', 'through', 'till',
         'toward', 'under', 'underneath', 'unlike', 'until', 'upon', 'versus',
-        'via', 'with', 'within', 'without', 'the', 'and',
+        'via', 'with', 'within', 'without', 'the', 'and', 'pdf',
         ]
     publishers = [
         'apress', 'packt', 'oreilly', 'reilly', 'addison', 'wesley', 'john',
