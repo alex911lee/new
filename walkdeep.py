@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from exterms import parse_name
 
@@ -14,10 +15,14 @@ def merge_dict(idx1, idx2):
 
 
 def dir_walk(current_dir):
-    print("parsing...... ", current_dir, os.path.abspath(current_dir))
-
-    index = {'count': 0}
-
+    try:
+        dirname = current_dir.name
+    except AttributeError:
+        dirname = current_dir
+        index = {'count': 0}
+    else:
+        index = {'count': 0, dirname: 10}
+    print(dirname, "parsing...... ", os.path.abspath(current_dir))
     with os.scandir(current_dir) as it:
         for entry in it:
             if (not entry.name.startswith('.') and entry.is_dir()):
